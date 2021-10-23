@@ -44,11 +44,6 @@ def dateandmonth():
         day = daynum
         gender = "Male"
 
-    #if checkLeap():
-        #day = day-1
-    #print("*")
-        #day = day
-
     global month
     global date
     if day <= 31:
