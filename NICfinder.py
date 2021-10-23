@@ -19,10 +19,6 @@ def checkLeap():
 
 
 def nic():
-    global year
-    global daynum
-    global date
-    global gender
 
     dateandmonth()
     
