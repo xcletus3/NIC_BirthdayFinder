@@ -1,8 +1,4 @@
 nicNo = (input("Input Your NIC number: "))
-global year
-global daynum
-global date
-global gender
 
 def checkLeap():
     global year
@@ -17,20 +13,18 @@ def checkLeap():
     else:
         return False
 
-
 def nic():
-
     dateandmonth()
-    
-    print(f"Your Birth Year is {year}")    
-    print(f"Your Birth Month is {month}")
-    print(f"Your Birth date is {date}")
-    print(f"You are a {gender}")
 
+    if year and month and date and gender:
+        print(f"Your Birth Year is {year}")    
+        print(f"Your Birth Month is {month}")
+        print(f"Your Birth date is {date}")
+        print(f"You are a {gender}")
+    else:
+        print("Enter a vaild NIC number")
 
 def dateandmonth():
-    global daynum
-    global day
     global gender
     
     if daynum > 500:
@@ -42,45 +36,45 @@ def dateandmonth():
 
     global month
     global date
-    if day <= 31:
+    if 0 < day <= 31:
         month = "January"
         date = day
-    elif day <=59:
+    elif 31 < day <=59:
         month = "February"
         date = day - 31
-    elif day <= 90:
+    elif 59 < day <= 90:
         month = "March"
         date = day - 59
-    elif day <= 120:
+    elif 90 < day <= 120:
         month = "April"
         date = day - 90
-    elif day <= 151:
+    elif 120 < day <= 151:
         month = "May"
         date = day - 120
-    elif day <= 181:
+    elif 151 < day <= 181:
         month = "June"
         date = day - 151
-    elif day <= 212:
+    elif 181 < day <= 212:
         month = "July"
         date = day - 181
-    elif day <= 243:
+    elif 212 < day <= 243:
         month = "August"
         date = day - 212
-    elif day <= 273:
+    elif 243 < day <= 273:
         month = "September"
         date = day - 243
-    elif day <= 304:
+    elif 273 < day <= 304:
         month = "October"
         date = day - 273
-    elif day <= 334:
+    elif 304 < day <= 334:
         month = "November"
         date = day - 304
-    elif day <= 365:
+    elif 334 < day <= 365:
         month = "December"
         date = day - 334
     else:
-        print("Enter a valid NIC number")
-
+        month = None
+        date = None
 
 if len(nicNo) == 10:
     year = 1900 + int(nicNo[0:2])
